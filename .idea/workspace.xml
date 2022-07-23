@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90d2f8e7-1110-456b-adbe-d39b2feef402" name="Changes" comment="Init and ignore files.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/carlnk/args/ArgTest.java" afterDir="false" />
+    <list default="true" id="90d2f8e7-1110-456b-adbe-d39b2feef402" name="Changes" comment="List top tasks, and break them down into smaller pieces.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/carlnk/args/Args.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/carlnk/args/Option.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/carlnk/args/ArgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/carlnk/args/ArgTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +45,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.carlnk.args" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658548402730</updated>
-      <workItem from="1658548406647" duration="1619000" />
+      <workItem from="1658548406647" duration="3087000" />
     </task>
     <task id="LOCAL-00001" summary="Init and ignore files.">
       <created>1658548780478</created>
@@ -63,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658548780478</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="List top tasks, and break them down into smaller pieces.">
+      <created>1658550150315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658550150315</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init and ignore files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Init and ignore files." />
+    <MESSAGE value="List top tasks, and break them down into smaller pieces." />
+    <option name="LAST_COMMIT_MESSAGE" value="List top tasks, and break them down into smaller pieces." />
   </component>
 </project>

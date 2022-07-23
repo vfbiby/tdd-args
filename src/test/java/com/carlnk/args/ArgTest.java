@@ -1,5 +1,6 @@
 package com.carlnk.args;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,23 +26,25 @@ public class ArgTest {
     // TODO: 2022/7/23 String ""
 
     @Test
+    @Disabled
     public void should_example_1() {
-        Options options = Args.parse(Option.class, "-l", "-p", "8080", "-d", "/usr/logs");
+        Options options = Args.parse(Options.class, "-l", "-p", "8080", "-d", "/usr/logs");
         assertTrue(options.logging());
-        assertEquals(options.port());
+        assertEquals(options.port(), 8080);
     }
 
     @Test
+    @Disabled
     public void should_example_2() {
-        Options options = Args.parse(ListOption.class, "-g", "this", "is", "a", "list", "-d", "1", "2", "-3", "5");
+        ListOptions options = Args.parse(ListOptions.class, "-g", "this", "is", "a", "list", "-d", "1", "2", "-3", "5");
         assertArrayEquals(new String[]{"this", "is", "a", "list"}, options.group());
-        assertArrayEquals(new int[]{1, 2, -3, 5}, options.demicals());
+        assertArrayEquals(new int[]{1, 2, -3, 5}, options.decimals());
     }
 
     static record Options(@Option("l") boolean logging, @Option("p") int port, @Option("d") String directory) {
     }
 
-    static record ListOptions(@Option("g") String group, @Option("d") int[] decimals) {
+    static record ListOptions(@Option("g") String[] group, @Option("d") int[] decimals) {
     }
 
 }
