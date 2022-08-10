@@ -12,10 +12,55 @@ public class ArgTest {
     //{-l: [], -p: [8080], -d: [/usr/logs]}
 
     //Single Option:
-    // TODO: 2022/7/23 Bool -l
-    // TODO: 2022/7/23 Integer -p 8080
-    // TODO: 2022/7/23 String -d /usr/logs
-    // TODO: 2022/7/23 Multiple Options: -l -p 8080 -d /usr/logs
+
+    @Test
+    void should_set_boolean_option_to_false_if_flag_not_present() {
+        BooleanOption option = Args.parse(BooleanOption.class);
+        assertFalse(option.logging());
+    }
+
+    @Test
+    void should_set_boolean_to_true_if_flag_present() {
+        BooleanOption option = Args.parse(BooleanOption.class, "-l");
+        assertTrue(option.logging());
+    }
+
+    static record BooleanOption(@Option("l") boolean logging) {
+    }
+
+
+    @Test
+    void should_parse_int_as_option_value() {
+        IntOption option = Args.parse(IntOption.class, "-p", "8080");
+        assertEquals(8080, option.port());
+    }
+
+    static record IntOption(@Option("p") int port) {
+
+    }
+
+    @Test
+    void should_get_string_as_option_value() {
+        StringOption option = Args.parse(StringOption.class, "-d", "/usr/logs");
+        assertEquals("/usr/logs", option.directory());
+    }
+
+    static record StringOption(@Option("d") String directory) {
+    }
+
+
+    @Test
+    void should_parse_multi_options() {
+        MultiOption option = Args.parse(MultiOption.class, "-l", "-p", "8080", "-d", "/usr/logs");
+        assertTrue(option.logging());
+        assertEquals(8080, option.port());
+        assertEquals("/usr/logs", option.directory());
+    }
+
+    static record MultiOption(@Option("l") boolean logging, @Option("p") int port, @Option("d") String directory) {
+    }
+
+
     //Sad path
     // TODO: 2022/7/23 Bool -l t / -l t f
     // TODO: 2022/7/23 Integer -p / -p 8080 8081
